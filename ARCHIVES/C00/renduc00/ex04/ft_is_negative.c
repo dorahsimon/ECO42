@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 10:49:24 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/21 14:08:00 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/15 18:02:41 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/18 17:02:14 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+#include "unistd.h"
+
+void	ft_putchar(int c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_is_negative(int n)
 {
 	int i;
 
-	i = *a;
-	*a = *b;
-	*b = i;
+	i = n;
+	if (i < 0)
+	{
+		ft_putchar(78);
+	}
+	if (i >= 0)
+	{
+		ft_putchar(80);
+	}
 }

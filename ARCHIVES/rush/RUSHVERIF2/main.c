@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: abesombe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 10:49:24 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/21 14:08:00 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/17 16:06:19 by abesombe          #+#    #+#             */
+/*   Updated: 2020/10/17 18:03:05 by abesombe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int i;
+void	ft_putchar(char c);
+void	rush(int x, int y);
+void	ft_print_first_line(int x, int y);
+void	ft_print_last_line(int x, int y);
+void	ft_print_intermed_line(int x, int y);
 
-	i = *a;
-	*a = *b;
-	*b = i;
+int		main(void)
+{
+	rush(1, 5);
+	return (0);
 }

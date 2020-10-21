@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 10:49:24 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/21 14:08:00 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/21 13:52:21 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/21 14:12:19 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int i;
+	int tab2[size];
 
-	i = *a;
-	*a = *b;
-	*b = i;
+	i = 0;
+	while (i < size - 1)
+	{
+		if (tab[i] > tab[i + 1])
+		{
+			tab2[i] = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tab2[i];
+			i = 0;
+		}
+		else
+			i++;
+	}
 }

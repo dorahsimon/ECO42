@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 10:49:24 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/21 14:08:00 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/15 14:43:57 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/15 14:56:14 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int i;
+#include "unistd.h"
 
-	i = *a;
-	*a = *b;
-	*b = i;
+void	ft_putchar (char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_print_reverse_alphabet(void)
+{
+	int	i;
+
+	i = 'z';
+	while (i >= 'a')
+	{
+		ft_putchar(i);
+		i--;
+	}
 }
