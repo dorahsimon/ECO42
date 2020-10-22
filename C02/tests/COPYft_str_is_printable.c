@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 11:46:08 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 19:36:19 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/21 19:37:48 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/22 11:00:28 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
+#include <stdio.h>
 
-void	ft_putchar(int i)
+int	ft_str_is_printable(char *str)
 {
-	write(1, &i, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb < -2147483647)
-		ft_putchar(-214783648);
-	if (nb >= 0 && nb < 10)
-		ft_putchar(nb + 48);
-	else if (nb < 0)
+	while (*str)
 	{
-		ft_putchar('-');
-		ft_putnbr(nb * (-1));
+		if (*str < 32 || *str == 127)
+			return (0);
+		str++;
 	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	return (1);
 }
 
 int	main(void)
 {
-	ft_putnbr(123546);
+	char str[] = {126};
+
+	printf("%d\n", ft_str_is_printable(str));
 	return (0);
 }

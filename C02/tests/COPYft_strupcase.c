@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 11:46:08 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 19:36:19 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/22 11:04:38 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/22 11:52:08 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
+#include <stdio.h>
 
-void	ft_putchar(int i)
+char *ft_strupcase(char *str)
 {
-	write(1, &i, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb < -2147483647)
-		ft_putchar(-214783648);
-	if (nb >= 0 && nb < 10)
-		ft_putchar(nb + 48);
-	else if (nb < 0)
+	while (*str)
 	{
-		ft_putchar('-');
-		ft_putnbr(nb * (-1));
+		if (*str < 'a' || *str > 'z')
+			str++;
+		else
+			*str = (*str - 32);
 	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	return (str);
 }
 
 int	main(void)
 {
-	ft_putnbr(123546);
+	char str[] = "helloLES23;ji8^7*&ftG";
+
+	//marche pas printf("%s\n", ft_strupcase(str));
 	return (0);
 }

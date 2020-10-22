@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 11:46:08 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 19:36:19 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/22 18:44:15 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/22 18:56:16 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
-
-void	ft_putchar(int i)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	write(1, &i, 1);
-}
+	int i;
+	unsigned int v;
 
-void	ft_putnbr(int nb)
-{
-	if (nb < -2147483647)
-		ft_putchar(-214783648);
-	if (nb >= 0 && nb < 10)
-		ft_putchar(nb + 48);
-	else if (nb < 0)
+	v = 0;
+	if (v <= n)
 	{
-		ft_putchar('-');
-		ft_putnbr(nb * (-1));
+		while (s1[v] == s2[v])
+		{
+			v++;
+		}
+		if (s1[v] != s2[v])
+		{
+			i = (*s1 - *s2);
+			return (i);
+		}
+		else
+			return (0);
 	}
 	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+		return (0);
 }
 
 int	main(void)
 {
-	ft_putnbr(123546);
+	ft_strncmp("hello", "Hella", 3);
 	return (0);
 }

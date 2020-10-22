@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 11:46:08 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 19:36:19 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/22 19:07:17 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/22 19:25:32 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
-
-void	ft_putchar(int i)
+char	ft_strcat(char *dest, char *src)
 {
-	write(1, &i, 1);
-}
+	int i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb < -2147483647)
-		ft_putchar(-214783648);
-	if (nb >= 0 && nb < 10)
-		ft_putchar(nb + 48);
-	else if (nb < 0)
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		ft_putchar('-');
-		ft_putnbr(nb * (-1));
+		i++;
 	}
-	else
+	while (src[i] != '\0')
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i] = '\0';
+	return *(dest);
 }
 
 int	main(void)
 {
-	ft_putnbr(123546);
+	ft_strcat("Hello", "World");
 	return (0);
 }

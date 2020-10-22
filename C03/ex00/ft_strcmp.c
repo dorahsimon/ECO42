@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 11:46:08 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 19:36:19 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/22 17:53:05 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/22 18:42:07 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
-
-void	ft_putchar(int i)
+int	ft_strcmp(char *s1, char *s2)
 {
-	write(1, &i, 1);
-}
+	int i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb < -2147483647)
-		ft_putchar(-214783648);
-	if (nb >= 0 && nb < 10)
-		ft_putchar(nb + 48);
-	else if (nb < 0)
+	while (*s1 == *s2)
 	{
-		ft_putchar('-');
-		ft_putnbr(nb * (-1));
+		s1++;
+		s2++;
+	}
+	if (*s1 != *s2)
+	{
+		i = (*s1 - *s2);
+		return (i);
 	}
 	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-}
-
-int	main(void)
-{
-	ft_putnbr(123546);
-	return (0);
+		return (0);
 }
