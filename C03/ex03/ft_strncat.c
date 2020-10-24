@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 19:08:44 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/24 18:31:04 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/24 10:06:14 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/24 10:49:23 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+char	ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	while (*str)
+	int i;
+
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++;
+		i++;
 	}
-	return (1);
+	while (nb > 1 && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

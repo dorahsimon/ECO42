@@ -6,7 +6,7 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:07:17 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 19:25:32 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/24 09:54:39 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,5 @@ char	ft_strcat(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return *(dest);
-}
-
-int	main(void)
-{
-	ft_strcat("Hello", "World");
-	return (0);
+	return (dest);
 }

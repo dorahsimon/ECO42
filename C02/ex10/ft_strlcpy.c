@@ -6,11 +6,11 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 16:31:07 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 17:48:56 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/24 09:06:17 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int i;
 
@@ -22,18 +22,24 @@ unsigned int	ft_strlen(char *str)
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int i;
+	unsigned int i;
+	unsigned int j;
 
-	i = 0;
-	while (*src)
+	i = ft_strlen(src);
+	if (i < size - 1)
 	{
-		while (*(dest - 1))
+		j = - 1;
+		while (++j < 1 + 1)
 		{
-			*(dest + i) = *(src + i);
-			i++;
+			*(dest + j) = *(src + j);
 		}
-		if (*(dest + (size - 1)))
-			*dest = '\n';
+	}	
+	else if (size)
+	{
+		j = -1;
+		while (++j < size - 1)
+			*(dest + j) = *(src + j)
+		*(dest + j) = '\0';
 	}
-	return (ft_strlen);
+	return (i);
 }

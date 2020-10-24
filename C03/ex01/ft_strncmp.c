@@ -6,36 +6,27 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 18:44:15 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 18:56:16 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/24 19:04:13 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
 	unsigned int v;
+	int i;
 
 	v = 0;
-	if (v <= n)
+	while ((v <= n) && (*s1) && (*s1 == *s2))
 	{
-		while (s1[v] == s2[v])
-		{
-			v++;
-		}
-		if (s1[v] != s2[v])
-		{
-			i = (*s1 - *s2);
-			return (i);
-		}
-		else
-			return (0);
+		s1++;
+		s2++;
+		n--;
+	}
+	if (n > 0)
+	{
+		i = (*s1 - *s2);
+		return (i);
 	}
 	else
 		return (0);
-}
-
-int	main(void)
-{
-	ft_strncmp("hello", "Hella", 3);
-	return (0);
 }

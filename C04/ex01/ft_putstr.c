@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 19:08:44 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/24 18:31:04 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/24 19:27:15 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/24 19:34:52 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	while (*str)
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++;
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (1);
 }

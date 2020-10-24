@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 19:08:44 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/24 18:31:04 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/24 10:13:41 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/24 10:46:28 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
-	while (*str)
-	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++;
-	}
-	return (1);
+	int i;
+	int j;
+
+	if (!*to_find)
+		return (str)
+	else
+		while(*str && *to_find && (str[i] != to_find[i]))
+			i++;
+		while(*str && *to_find && (str[i] = to_find[i]))
+		{
+			j = i
+			i++;
+		}
+		if(to_find[i] = '\n')
+			return (j);
+		else
+			return (NULL);
 }
