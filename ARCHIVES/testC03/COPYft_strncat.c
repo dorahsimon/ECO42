@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 10:46:56 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/25 12:43:50 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/24 10:06:14 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/25 12:20:42 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+#include <stdio.h>
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int i;
-	unsigned int j;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
-	while ((i < size - 1) && (dest[i] != '\0'))
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	while ((i < size - 1) && (src[j] != '\0'))
+	while (nb > 1 && src[j] != '\0')
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (dest);
+}
+
+int		main(void)
+{
+	char dest[10];
+	char *src;
+
+	src = "blablabla";
+	printf("%s\n", ft_strncat(dest, src, 19));
+	return (0);
 }

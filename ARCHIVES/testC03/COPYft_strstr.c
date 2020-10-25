@@ -6,9 +6,11 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 10:13:41 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/25 18:44:04 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/25 18:42:37 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
@@ -30,5 +32,16 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		return (&str[i]);
 	}
+	return (0);
+}
+
+int		main(void)
+{
+	char *str;
+	char *to_find;
+
+	str = "Hello Green World";
+	to_find = "World";
+	printf("%s\n", ft_strstr(str, to_find));
 	return (0);
 }

@@ -6,14 +6,14 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 18:44:15 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/24 19:04:13 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/25 09:49:30 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int v;
-	int i;
+	unsigned int	v;
+	int				i;
 
 	v = 0;
 	while ((v <= n) && (*s1) && (*s1 == *s2))
