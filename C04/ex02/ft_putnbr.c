@@ -6,11 +6,9 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 19:35:27 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/24 19:40:45 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/25 19:22:51 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "unistd.h"
 
 void	ft_putchar(char c)
 {
@@ -19,26 +17,20 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	
-	BOGUE
+	unsigned int	v;
+
 	if (nb < 0)
-		ft_putchar(-214783648);
-	if (nb >= 0 && nb < 10)
-		ft_putchar(nb + 48);
-	else if (nb < 0)
 	{
 		ft_putchar('-');
-		ft_putnbr(nb * (-1));
+		v = (nb * (-1));
 	}
 	else
+		v = nb;
+	if (v >= 0 && v < 10)
+		ft_putchar(v + 48);
+	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr(v / 10);
+		ft_putnbr(v % 10);
 	}
-}
-
-int	main(void)
-{
-	ft_putnbr(123546);
-	return (0);
 }
