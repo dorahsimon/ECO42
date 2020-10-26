@@ -6,18 +6,24 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 11:04:38 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/22 12:01:42 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/26 14:01:55 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
+	int		count;
+
+	count = 0;
 	while (*str)
 	{
-		if (*str < 'a' || *str > 'z')
-			str++;
-		else
+		if (*str >= 'a' && *str <= 'z')
+		{
 			*str = (*str - 32);
+		}
+		count++;
+		str++;
 	}
+	str = (str - count);
 	return (str);
 }

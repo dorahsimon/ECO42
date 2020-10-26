@@ -6,11 +6,11 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:07:17 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/24 09:54:39 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/26 14:15:45 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
 	int i;
 
