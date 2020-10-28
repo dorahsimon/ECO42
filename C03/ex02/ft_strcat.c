@@ -6,23 +6,26 @@
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 19:07:17 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/26 14:15:45 by sclaude          ###   ########.fr       */
+/*   Updated: 2020/10/27 16:27:57 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
 	int i;
+	int j;
 
 	i = 0;
+	j = 0;
 	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	while (src[i] != '\0')
+	while (src[j] != '\0')
 	{
-		dest[i] = src[i];
+		dest[i] = src[j];
 		i++;
+		j++;
 	}
 	dest[i] = '\0';
 	return (dest);

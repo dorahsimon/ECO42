@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sclaude <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 18:44:15 by sclaude           #+#    #+#             */
-/*   Updated: 2020/10/27 15:11:18 by sclaude          ###   ########.fr       */
+/*   Created: 2020/10/28 19:14:41 by sclaude           #+#    #+#             */
+/*   Updated: 2020/10/28 19:44:22 by sclaude          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	unsigned int	i;
+	write(1, &c, 1);
+}
+
+int		main(int argc, char **argv)
+{
+	int i;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < (n - 1) && s1[i] && s2[i] && s1[i] == s2[i])
+	(void)argc;
+	while (argv[0][i])
 	{
+		ft_putchar(argv[0][i]);
 		i++;
 	}
-	return (s1[i] - s2[i]);
-}
+	return (0);
+}	
